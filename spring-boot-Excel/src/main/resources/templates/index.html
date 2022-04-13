@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<title>Vehicle-Details</title>
+</head>
+<body>
+<div align="center">
+    <h1>Vehicle-REGSTRATION-STATUS</h1>
+    <a href="new">Vehicle-Regstration-Status</a>
+    <br/><br/>
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>RegNo</th>
+                <th>ChassisNumber</th>
+                <th>OwnerName</th>
+                <th>Vehicle-Class</th>
+                <th>Model</th>
+                <th>RegUpTo</th>
+                <th>InsuranceUpTo</th>
+                <th>EmissionsNorms</th>
+                <th>RegDate</th>
+                <th>EngineNo</th>
+                <th>Fuel</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="search : ${listSearchVehicles}">
+                <td th:text="${search.regNo}">RegNo</td>
+                <td th:text="${search.chasNo}">ChassisNumber</td>
+                <td th:text="${search.OwnName}">OwnerName</td>
+                <td th:text="${search.vehClass}">VehicleClass</td>
+                <td th:text="${search.model}">Model</td>
+                <td th:text="${search.regUpTo}">RegUpTo</td>
+                <td th:text="${search.insureUpTo}">InsuranceUpTo</td>
+                <td th:text="${search.emNorms}">EmissionsNorms</td>
+                <td th:text="${search.regDate}">RegDate</td>
+                <td th:text="${search.engineNo}">EngineNo</td>
+                <td th:text="${search.fuel}">Fuel</td> 
+                  <td>
+                <a th:href = "@{/search/edit/{regNo}(regNo=${search.regNo})}"
+                   class = "btn btn-primary">Update</a>
+
+                 <a th:href = "@{/search/{regNo}(regNo=${search.regNo})}"
+                   class = "btn btn-danger">Delete</a>
+            </td>
+            </tr>
+        </tbody>
+    </table>
+</div>   
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>Create New Vehicle</title>
+</head>
+<body>
+    <div align="center">
+        <h1>Create New Vehicle</h1>
+        <br />
+        <form action="#" th:action="@{/save}" th:object="${search}"
+            method="post">
+
+            <table border="0" cellpadding="10">
+            
+            <tr>
+                    <td>Regstration-Number:</td>
+                    <td><input type="text" th:field="*{regNo}" /></td>
+                </tr>
+             
+                <tr>
+                    <td>Chassis-Number:</td>
+                    <td><input type="text" th:field="*{chasNo}" /></td>
+                </tr>
+                <tr>
+                    <td>OwnerName:</td>
+                    <td><input type="text" th:field="*{ownName}" /></td>
+                </tr>
+                <tr>
+                    <td>VehicleClass:</td>
+                    <td><input type="text" th:field="*{vehClass}" /></td>
+                </tr>
+                <tr>
+                    <td>Model:</td>
+                    <td><input type="text" th:field="*{model}" /></td>
+                </tr> 
+
+                <tr>
+                    <td>RegUpTo:</td>
+                    <td><input type="text" th:field="*{regUpTo}" /></td>
+                </tr> 
+
+                     <tr>
+                    <td>InsuranceUpTo:</td>
+                    <td><input type="text" th:field="*{insureUpTo}" /></td>
+                </tr> 
+                  <tr>
+                    <td>EmissionNorms:</td>
+                    <td><input type="text" th:field="*{emNorms}" /></td>
+                </tr> 
+                    <tr>
+                    <td>RegDate:</td>
+                    <td><input type="text" th:field="*{regDate}" /></td>
+                </tr>     
+                 <tr>
+                    <td>EngineNo:</td>
+                    <td><input type="text" th:field="*{engineNo}" /></td>
+                </tr>    
+                     <tr>
+                    <td>Fuel:</td>
+                    <td><input type="text" th:field="*{fuel}" /></td>
+                </tr>                            
+                 <tr>
+                <td colspan="2"><button type="submit" class = "btn btn-primary">Save</button> </td>
+            </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
